@@ -1,4 +1,7 @@
-import Image from 'next/image';
+import ImageTabs from '@/components/Image-tabs';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -6,15 +9,27 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-32">
-          <div>
-            <h1 className="text-black">
-              A better way to track your job application..
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="text-black mb-6 text-5xl font-bold">
+              A better way to track your job application.
             </h1>
-            <p className="text-gray-700">
+            <p className="text-muted-foreground mb-10 text-xl">
               Capture, organize and manage your job search in one place.
             </p>
+            <div className="mx-auto flex max-w-fit flex-col gap-4">
+              <Link href="/sign-up">
+                <Button
+                  size="lg"
+                  className="h-12 px-8 text-lg font-medium cursor-pointer"
+                >
+                  Start for free <ArrowRight className="ml-2" />
+                </Button>
+              </Link>
+              <p>Free forever. No credit card required.</p>
+            </div>
           </div>
         </section>
+        <ImageTabs />
       </main>
     </div>
   );
